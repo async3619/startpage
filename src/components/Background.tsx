@@ -3,7 +3,7 @@ import React from "react";
 import { Box } from "@mui/material";
 import { Graphics } from "@/graphics";
 
-import { Root } from "@/components/Background.styles";
+import { Overlay, Root } from "@/components/Background.styles";
 
 export class Background extends React.Component {
     private canvas = React.createRef<HTMLCanvasElement>();
@@ -32,6 +32,7 @@ export class Background extends React.Component {
         return (
             <Root>
                 <Box component="canvas" width="100%" height="100%" ref={this.canvas} />
+                <Overlay />
             </Root>
         );
     }
