@@ -18,7 +18,13 @@ export function Clock() {
 
     return (
         <Box mb={2}>
-            <Typography variant="body1" fontSize="5rem" color="text.secondary" lineHeight={1}>
+            <Typography
+                variant="body1"
+                fontSize="5rem"
+                color="text.secondary"
+                lineHeight={1}
+                sx={{ userSelect: "none" }}
+            >
                 {currentTime?.format("HH:mm:ss") || ""}
             </Typography>
         </Box>
