@@ -1,8 +1,10 @@
 import React from "react";
 import { Global } from "@emotion/react";
+import { Box } from "@mui/material";
+
+import { Background } from "@/components/Background";
 
 import { GlobalStyles } from "./Layout.styles";
-import { Box } from "@mui/material";
 
 interface LayoutProps {
     children: React.ReactNode;
@@ -14,9 +16,12 @@ export class Layout extends React.Component<LayoutProps, LayoutStates> {
         const { children } = this.props;
 
         return (
-            <Box component="main" height="100%" p={2} display="flex" alignItems="center" justifyContent="center">
+            <Box height="100%" position="relative" display="flex" alignItems="center" justifyContent="center">
                 <Global styles={GlobalStyles} />
-                {children}
+                <Background />
+                <Box component="main" p={2} zIndex={10}>
+                    {children}
+                </Box>
             </Box>
         );
     }
